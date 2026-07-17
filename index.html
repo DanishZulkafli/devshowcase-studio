@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DevShowcase Studio | GitHub Portfolio Builder</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="logo-wrap">
+        <div class="logo">DS</div>
+        <div>
+          <h1>DevShowcase</h1>
+          <p>Portfolio Builder</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#readme">README Generator</a>
+      </nav>
+
+      <div class="side-card">
+        <p class="mini-title">Today Mission</p>
+        <h3 id="todayMission">Improve one project</h3>
+        <p>Make your GitHub profile look more professional with small daily updates.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <section class="hero" id="dashboard">
+        <div class="hero-content">
+          <p class="tagline">GitHub Pages Project</p>
+          <h2>Build a professional developer portfolio from your GitHub projects.</h2>
+          <p>
+            DevShowcase Studio helps you manage portfolio projects, track skills,
+            organize roadmap tasks, and generate a clean GitHub profile README.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary">Add Project</a>
+            <a href="#readme" class="btn ghost">Generate README</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-avatar">MD</div>
+          <h3>Muhammad Danish</h3>
+          <p>Web Developer • Computer Science • GitHub Builder</p>
+
+          <div class="profile-stats">
+            <div>
+              <strong id="heroProjectCount">0</strong>
+              <span>Projects</span>
+            </div>
+            <div>
+              <strong id="heroSkillCount">0</strong>
+              <span>Skills</span>
+            </div>
+            <div>
+              <strong id="heroTaskCount">0</strong>
+              <span>Tasks</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <p>Total Projects</p>
+          <h3 id="totalProjects">0</h3>
+        </div>
+
+        <div class="stat-card">
+          <p>Completed Projects</p>
+          <h3 id="completedProjects">0</h3>
+        </div>
+
+        <div class="stat-card">
+          <p>Average Progress</p>
+          <h3 id="averageProgress">0%</h3>
+        </div>
+
+        <div class="stat-card">
+          <p>Open Roadmap Tasks</p>
+          <h3 id="openTasks">0</h3>
+        </div>
+      </section>
+
+      <section class="panel" id="projects">
+        <div class="section-heading">
+          <div>
+            <p class="tagline">Portfolio Projects</p>
+            <h2>Project Showcase Manager</h2>
+          </div>
+          <button class="btn primary" id="sampleProjectBtn">Add Sample Idea</button>
+        </div>
+
+        <form id="projectForm" class="project-form">
+          <div class="form-group">
+            <label>Project Name</label>
+            <input type="text" id="projectName" placeholder="Example: AI Study Planner" required />
+          </div>
+
+          <div class="form-group">
+            <label>Category</label>
+            <select id="projectCategory">
+              <option>AI Application</option>
+              <option>Web Development</option>
+              <option>Dashboard</option>
+              <option>Portfolio</option>
+              <option>Productivity Tool</option>
+              <option>Education Tool</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Status</label>
+            <select id="projectStatus">
+              <option>Planning</option>
+              <option>In Progress</option>
+              <option>Completed</option>
+              <option>Improving</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Progress</label>
+            <input type="range" id="projectProgress" min="0" max="100" value="70" />
+          </div>
+
+          <div class="form-group wide">
+            <label>Description</label>
+            <textarea id="projectDescription" placeholder="Describe what your project does..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Technologies</label>
+            <input type="text" id="projectTech" placeholder="HTML, CSS, JavaScript" required />
+          </div>
+
+          <div class="form-group">
+            <label>Repository Link</label>
+            <input type="url" id="projectRepo" placeholder="https://github.com/username/project" />
+          </div>
+
+          <div class="form-group">
+            <label>Demo Link</label>
+            <input type="url" id="projectDemo" placeholder="https://username.github.io/project" />
+          </div>
+
+          <div class="form-group">
+            <label>Impact Level</label>
+            <select id="projectImpact">
+              <option>High Impact</option>
+              <option>Medium Impact</option>
+              <option>Learning Project</option>
+              <option>Experimental</option>
+            </select>
+          </div>
+
+          <button class="btn primary wide" type="submit">Save Project</button>
+        </form>
+
+        <div class="tools-row">
+          <input type="text" id="projectSearch" placeholder="Search project..." />
+
+          <select id="projectFilter">
+            <option value="All">All Categories</option>
+            <option value="AI Application">AI Application</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Dashboard">Dashboard</option>
+            <option value="Portfolio">Portfolio</option>
+            <option value="Productivity Tool">Productivity Tool</option>
+            <option value="Education Tool">Education Tool</option>
+          </select>
+        </div>
+
+        <div id="projectList" class="project-list"></div>
+      </section>
+
+      <section class="panel" id="skills">
+        <div class="section-heading">
+          <div>
+            <p class="tagline">Developer Skills</p>
+            <h2>Skill Progress Tracker</h2>
+          </div>
+        </div>
+
+        <form id="skillForm" class="skill-form">
+          <input type="text" id="skillName" placeholder="Example: JavaScript" required />
+
+          <select id="skillCategory">
+            <option>Frontend</option>
+            <option>Backend</option>
+            <option>Database</option>
+            <option>AI / Data</option>
+            <option>DevOps</option>
+            <option>Soft Skill</option>
+          </select>
+
+          <input type="range" id="skillLevel" min="0" max="100" value="70" />
+
+          <button class="btn primary" type="submit">Add Skill</button>
+        </form>
+
+        <div id="skillList" class="skill-list"></div>
+      </section>
+
+      <section class="panel" id="roadmap">
+        <div class="section-heading">
+          <div>
+            <p class="tagline">GitHub Improvement Plan</p>
+            <h2>Developer Roadmap Board</h2>
+          </div>
+        </div>
+
+        <form id="taskForm" class="task-form">
+          <input type="text" id="taskTitle" placeholder="Example: Add screenshots to README" required />
+
+          <select id="taskPriority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+          </select>
+
+          <select id="taskStage">
+            <option value="todo">To Do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+
+          <button class="btn primary" type="submit">Add Task</button>
+        </form>
+
+        <div class="board">
+          <div class="board-column">
+            <h3>To Do</h3>
+            <div id="todoTasks" class="task-list"></div>
+          </div>
+
+          <div class="board-column">
+            <h3>Doing</h3>
+            <div id="doingTasks" class="task-list"></div>
+          </div>
+
+          <div class="board-column">
+            <h3>Done</h3>
+            <div id="doneTasks" class="task-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="readme">
+        <div class="section-heading">
+          <div>
+            <p class="tagline">GitHub Profile README</p>
+            <h2>README Generator</h2>
+          </div>
+          <button class="btn primary" id="generateReadmeBtn">Generate README</button>
+        </div>
+
+        <div class="readme-grid">
+          <div class="readme-settings">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="readmeName" value="Muhammad Danish" />
+            </div>
+
+            <div class="form-group">
+              <label>Role</label>
+              <input type="text" id="readmeRole" value="Web Developer" />
+            </div>
+
+            <div class="form-group">
+              <label>Short Bio</label>
+              <textarea id="readmeBio">I enjoy building web applications, dashboards, AI-style tools, and useful projects that solve real problems.</textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Current Focus</label>
+              <input type="text" id="readmeFocus" value="Improving GitHub portfolio and building complete web projects" />
+            </div>
+
+            <button class="btn ghost" id="copyReadmeBtn" type="button">Copy README</button>
+          </div>
+
+          <textarea id="readmeOutput" class="readme-output" placeholder="Generated README will appear here..."></textarea>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>DevShowcase Studio • Built using HTML, CSS and JavaScript • Ready for GitHub Pages</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
