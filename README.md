@@ -6,15 +6,7 @@ This project helps developers manage portfolio projects, track technical skills,
 
 ---
 
-## Live Demo
-
-After deploying this project using GitHub Pages, add your live demo link here:
-
-```text
-https://your-username.github.io/devshowcase-studio/
-```
-
-Example:
+## Live Demo=
 
 ```text
 https://DanishZulkafli.github.io/devshowcase-studio/
